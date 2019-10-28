@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>error page</title>
+        <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    </head>
+<body>
+<div>
+    <text> Error Page</text>
+</div>
+<div>
+    <button id="refresh_page" type="button" style="margin-top: 20px">refresh page</button>
+</div>
+<script type="text/javascript">
+  var u = navigator.userAgent;
+  var mIsLoading = true;
+  var type = 1;
+  var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //Android终端
+  var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //iOS终端
+
+  var refresh = document.getElementById("refresh_page");
+  refresh.addEventListener("click", refreshPage);
+
+  function refreshPage() {
+    window.noxbrowser_error_page_name.updateCurrentUrl();
+  }
+</script>
+</body>
+</html>
